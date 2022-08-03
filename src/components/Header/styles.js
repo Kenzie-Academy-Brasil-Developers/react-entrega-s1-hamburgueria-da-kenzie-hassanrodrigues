@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
-  height: 126px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
+  height: 126px;
   background-color: var(--gray-0);
-  gap: 16px;
   font-family: var(--font);
+  gap: 16px;
 
   nav {
     display: flex;
     justify-content: center;
+    line-height: 1;
+    gap: 50%;
     input {
       width: 320px;
       height: 45px;
@@ -31,14 +33,15 @@ export const HeaderStyled = styled.header`
       }
     }
     button {
+      justify-content: space-between;
+      transform: translate(120px, 8px);
       position: absolute;
-      transform: translate(7.4rem, 8px);
       height: 36px;
       border: unset;
-      background-color: var(--Color-primary);
-      font-weight: 600;
-      color: #fff;
       border-radius: 8px;
+      font-weight: 600;
+      background-color: var(--Color-primary);
+      color: #fff;
       cursor: pointer;
     }
   }

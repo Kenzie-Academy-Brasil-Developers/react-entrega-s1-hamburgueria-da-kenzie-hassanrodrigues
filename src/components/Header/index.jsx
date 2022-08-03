@@ -7,10 +7,10 @@ const Header = ({ setPesquisa }) => {
       <img src={logo} alt="Burguer Kenzie" />
       <nav>
         <input
-          maxLength={15}
+          maxLength={17}
           type="text"
           placeholder="Digitar Pesquisa"
-          onChange={(event) => setPesquisa(event.target.value)}
+          onChange={(e) => setPesquisa(e.target.value)}
         />
         <button>Pesquisar</button>
       </nav>

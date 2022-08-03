@@ -3,35 +3,34 @@ import { Ul, Main } from "./styles";
 import { useState } from "react";
 import Cart from "../Cart/index";
 function ProductList({ products, toast, sucess }) {
-  const [CurrentSale, setCurrentSale] = useState([]);
+  const [sale, setSale] = useState([]);
 
   function deletAll() {
     toast.info("Carrinho vazio!");
-    setCurrentSale([]);
+    setSale([]);
   }
-  function delet(ev) {
-    let produto = ev.target.parentNode.children[1].children[0].textContent;
+  function delet(e) {
+    let produto = e.target.parentNode.children[1].children[0].textContent;
     toast.info(`${produto} Removido!`);
-    let filtrados = CurrentSale.filter((item) => item.name !== produto);
-    setCurrentSale(filtrados);
+    let filtrados = sale.filter((item) => item.name !== produto);
+    setSale(filtrados);
   }
-  function add(ev) {
-    let produto = {
-      id: parseInt(ev),
-      produt: this.products.find((item) => this.product.id === this.id),
-      nome: this.product.name,
-      find: CurrentSale.find((item) => this.name === item.name),
-    };
-    if (CurrentSale.length > 0) {
-      if (produto.find === undefined) {
-        sucess(produto.nome);
-        setCurrentSale((old) => [...old, produto.product]);
+  function add(e) {
+    let id = parseInt(e);
+    let produto = products.find((item) => item.id === id);
+    let nome = produto.name;
+    let pes = sale.find((item) => nome === item.name);
+
+    if (sale.length > 0) {
+      if (pes === undefined) {
+        sucess(nome);
+        setSale((old) => [...old, produto]);
       } else {
-        toast.error(`${produto.nome} já foi inserido !`);
+        toast.error(`${nome} já foi inserido !`);
       }
     } else {
-      sucess(produto.nome);
-      setCurrentSale((old) => [...old, produto.product]);
+      sucess(nome);
+      setSale((old) => [...old, produto]);
     }
   }
 
@@ -40,14 +39,7 @@ function ProductList({ products, toast, sucess }) {
       <div>
         <Ul>{<Product products={products} add={add} toast={toast} />}</Ul>
       </div>
-      {
-        <Cart
-          currentSale={CurrentSale}
-          setCart
-          remove={delet}
-          removeAll={deletAll}
-        />
-      }
+      {<Cart sale={sale} delet={delet} deletAll={deletAll} />}
     </Main>
   );
 }

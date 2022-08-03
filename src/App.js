@@ -1,8 +1,9 @@
 import { Global } from "./global/global";
 import { useState, useEffect } from "react";
 import "./App.css";
-import { toast } from "react-toastify";
-import Header from "./components/Header";
+import { ToastContainer, toast, Flip } from "react-toastify";
+import Header from "./components/Header/index";
+import "react-toastify/dist/ReactToastify.css";
 import ProductsList from "./components/ProductsList/index";
 
 function App() {
@@ -19,9 +20,9 @@ function App() {
       });
   }, [pesquisa]);
 
-  const sucess = (nome) => {
+  function sucess(nome) {
     toast.success(`${nome} adicionado!`);
-  };
+  }
   return (
     <>
       <Header setPesquisa={setPesquisa} />
@@ -30,6 +31,12 @@ function App() {
         products={products}
         toast={toast}
         sucess={sucess}
+      />
+      <ToastContainer
+        theme="colored"
+        autoClose="1000"
+        position="top-center"
+        transition={Flip}
       />
 
       <Global />

@@ -1,4 +1,4 @@
-import { Li, DivImage, DivInfo } from "./styles";
+import { Li, DivImg, DivInfo, H1 } from "./styles";
 
 const Product = ({ products, add, toast }) => {
   return (
@@ -6,9 +6,9 @@ const Product = ({ products, add, toast }) => {
       {products.length > 0 ? (
         products.map((product) => (
           <Li key={product.id}>
-            <DivImage>
+            <DivImg>
               <img src={product.img} alt={product.name} />
-            </DivImage>
+            </DivImg>
 
             <DivInfo>
               <h3>{product.name}</h3>
@@ -21,9 +21,7 @@ const Product = ({ products, add, toast }) => {
           </Li>
         ))
       ) : (
-        <h1 style={{ margin: "0 auto", fontSize: "20px" }}>
-          Nenhum item foi encontrado.
-        </h1>
+        <H1>Nenhum item foi encontrado.</H1>
       )}
     </>
   );
