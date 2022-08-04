@@ -15,11 +15,9 @@ export const Ul = styled.ul`
     overflow: unset;
   }
 `;
-
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-
   margin-left: 20px;
   @media screen and (min-width: 1400px) {
     flex-direction: row;

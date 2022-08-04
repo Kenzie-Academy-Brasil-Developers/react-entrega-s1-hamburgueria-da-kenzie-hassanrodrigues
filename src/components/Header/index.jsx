@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 const Header = ({ setPesquisa }) => {
   return (
     <HeaderStyled>
-      <img src={logo} alt="Burguer Kenzie" />
+      <img src={logo} alt="Burguer Kenzie logo" />
       <nav>
         <input
           maxLength={17}

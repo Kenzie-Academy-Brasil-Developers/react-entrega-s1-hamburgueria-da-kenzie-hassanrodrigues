@@ -50,7 +50,6 @@ table {
 	border-spacing: 0;
 }
 
-
 :root{
     --Color-primary: #27AE60; 
     --Color-primary-50: #93D7AF;

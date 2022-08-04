@@ -7,7 +7,6 @@ export const Li = styled.li`
   height: 352px;
   border: 2px solid var(--gray-20);
   border-radius: 3px;
-
   :hover {
     box-shadow: 3px 3px 10px -5px;
   }
@@ -21,7 +20,6 @@ export const H1 = styled.h1`
   margin: "0 auto";
   font-size: "20px";
 `;
-
 export const DivImg = styled.div`
   display: flex;
   justify-content: center;
@@ -35,7 +33,6 @@ export const DivImg = styled.div`
     height: 100%;
   }
 `;
-
 export const DivInfo = styled.div`
   display: flex;
   flex-direction: column;

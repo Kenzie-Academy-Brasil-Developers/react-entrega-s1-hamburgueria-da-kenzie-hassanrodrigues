@@ -9,7 +9,6 @@ export const HeaderStyled = styled.header`
   background-color: var(--gray-0);
   font-family: var(--font);
   gap: 16px;
-
   nav {
     display: flex;
     justify-content: center;
@@ -23,11 +22,9 @@ export const HeaderStyled = styled.header`
       padding-left: 17px;
       font-weight: 500;
       opacity: 0.7;
-
       @media screen and (min-width: 1400px) {
         margin-left: 252px;
       }
-
       :hover {
         border: 1.5px solid var(--Color-primary);
       }
@@ -45,7 +42,6 @@ export const HeaderStyled = styled.header`
       cursor: pointer;
     }
   }
-
   @media screen and (min-width: 650px) {
     flex-direction: row;
     justify-content: space-around;

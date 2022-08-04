@@ -9,7 +9,6 @@ const Product = ({ products, add, toast }) => {
             <DivImg>
               <img src={product.img} alt={product.name} />
             </DivImg>
-
             <DivInfo>
               <h3>{product.name}</h3>
               <p>{product.category}</p>
