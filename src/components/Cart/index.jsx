@@ -28,6 +28,8 @@ const Cart = ({ sale, delet, deletAll }) => {
               <BsFillCartPlusFill
                 style={{
                   display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   width: "100px",
                   height: "120px",
                   margin: "48px auto",
