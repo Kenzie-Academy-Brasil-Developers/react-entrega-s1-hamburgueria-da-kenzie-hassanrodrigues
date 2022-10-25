@@ -9,12 +9,14 @@ function ProductList({ products, toast, sucess }) {
     toast.info("Carrinho vazio!");
     setSale([]);
   }
+  
   function delet(e) {
     let produto = e.target.parentNode.children[1].children[0].textContent;
     toast.info(`${produto} Removido!`);
     let filtrados = sale.filter((item) => item.name !== produto);
     setSale(filtrados);
   }
+
   function add(e) {
     let id = parseInt(e);
     let produto = products.find((item) => item.id === id);
